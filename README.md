@@ -2,6 +2,9 @@
 
 ## Test the webapp @[https://webappmytodo.herokuapp.com](https://webappmytodo.herokuapp.com)
 
+## Snaps
+<img src="Snaps/project-7.0.jpeg" alt="homepage" width="200"/>
+
 ## How to Use?
 - Add the **title** of your task in the title box.
 - Add the **description** of your task in the description box.
