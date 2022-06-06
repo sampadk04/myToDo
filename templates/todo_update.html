@@ -1,0 +1,40 @@
+{% extends "todo_base.html" %}
+
+<!--Head Block-->
+{% block head %}
+<title>Update: ToDo</title>
+{% endblock %}
+
+<!--Body Block-->
+{% block body %}
+<div class="container py-3 px-10">
+  <h1 class="text-center">Update ToDo</h1>
+  <form action="/update/{{update_todo.todo_id}}" method="POST">
+    <div class="mb-3">
+      <label for="title" class="form-label">Update ToDo Title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        id="title"
+        value="{{update_todo.todo_title}}"
+      />
+      <div id="titleHelp" class="form-text">Update your ToDo's title here!</div>
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">Update ToDo Description</label>
+      <input
+        type="text"
+        class="form-control"
+        name="desc"
+        id="desc"
+        value="{{update_todo.todo_desc}}"
+      />
+      <div id="descHelp" class="form-text">
+        Update your ToDo's description here!
+      </div>
+    </div>
+    <button type="submit" class="btn btn-outline-dark">Update</button>
+  </form>
+</div>
+{% endblock %}

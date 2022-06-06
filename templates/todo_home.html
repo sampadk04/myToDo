@@ -1,0 +1,90 @@
+{% extends "todo_base.html" %}
+
+<!--Head Block-->
+{% block head %}
+<title>Home: ToDo</title>
+{% endblock %}
+
+<!--Body Block-->
+{% block body %}
+<div class="container py-3 px-10">
+  <h1 class="text-center">Add ToDos</h1>
+  <form action="/" method="POST">
+    <div class="mb-3">
+      <label for="title" class="form-label">ToDo Title</label>
+      <input type="text" class="form-control" name="title" id="title" />
+      <div id="titleHelp" class="form-text">Add your ToDo's title here!</div>
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">ToDo Description</label>
+      <input type="text" class="form-control" name="desc" id="desc" />
+      <div id="descHelp" class="form-text">
+        Add your ToDo's description here!
+      </div>
+    </div>
+    <button type="submit" class="btn btn-outline-dark">Add Task</button>
+  </form>
+</div>
+
+<br />
+
+{% if todo_list|length == 0 %}
+<div class="container py-3 px-5">
+  <div
+    class="alert alert-warning alert-dismissible fade show text-center"
+    role="alert"
+  >
+    <strong>Please add some ToDos to view them here!</strong>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+</div>
+
+{% else %}
+
+<div class="container py-3 px-5">
+  <h1 class="text-center">View ToDos</h1>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titles</th>
+        <th scope="col">Descriptions</th>
+        <th class="text-center" scope="col">Date/Time</th>
+        <th class="text-center" scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in todo_list %}
+      <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td>{{todo.todo_title}}</td>
+        <td>{{todo.todo_desc}}</td>
+        <td class="text-center">{{todo.todo_date}}</td>
+        <td class="text-center">
+          <div class="btn-group" role="group">
+            <a
+              class="btn btn-outline-dark btn-sm"
+              href="/update/{{todo.todo_id}}"
+              role="button"
+              >Update</a
+            >
+            <a
+              class="btn btn-outline-dark btn-sm"
+              href="/delete/{{todo.todo_id}}"
+              role="button"
+              >Delete</a
+            >
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endif %} {% endblock %}

@@ -1,0 +1,39 @@
+{% extends "todo_base.html" %}
+
+<!--Head Block-->
+{% block head %}
+<title>About: ToDo</title>
+{% endblock %}
+
+<!--Body Block-->
+{% block body %}
+<div class="container py-3 px-10">
+  <h1 class="text-center">About</h1>
+  <br />
+  <h2>How to Use?</h2>
+  <p>
+      <ul>
+          <li>Add the 'title' of your task in the title box.</li>
+          <li>Add the 'description' of your task in the description box.</li>
+          <li>Click on the 'Add Task' button to add the task to you 'ToDo List'.</li>
+          <li>Update/Delete your task by clicking on the relevant buttons in the 'ToDo List'.</li>
+      </ul>
+  </p>
+  <br>
+  <h2>Tools Used</h2>
+  <ul>
+      <li>Python</li>
+      <li>Flask, Flask SQLAlchemy</li>
+      <li>HTML, CSS(Bootstrap)</li>
+      <li>SQLite</li>
+      <li>Heroku</li>
+  </ul>
+  <br>
+  <h2>Contact Me</h2>
+  <ul>
+      <li>Visit my Portfolio @<a href="https://sampadk04.github.io" title="Sampad's Portfolio" target="_blank">sampadk04.github.io</a>.</li>
+      <li>Visit my github page @<a href="https://github.com/sampadk04" title="Sampad's GitHub" target="_blank">github.com/sampadk04</a>.</li>
+      <li>Find the codes and files for this project @<a href="https://github.com/sampadk04/myToDo" title="Sampad's GitHub" target="_blank">myToDo</a> repository.</li>
+  </ul>
+</div>
+{% endblock %}
